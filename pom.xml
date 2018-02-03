@@ -11,6 +11,8 @@
         <module>input-api</module>
         <module>input-api-file</module>
         <module>geocoding-api</module>
+        <module>geocoding-rest-api</module>
+        <module>geocoding-rest-google</module>
     </modules>
 
     <parent>
@@ -25,7 +27,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
 
-        <cxf-xjc-plugin.version>3.2.0</cxf-xjc-plugin.version>
+        <cxf-xjc-plugin.version>3.1.0</cxf-xjc-plugin.version>
     </properties>
 
     <dependencyManagement>
@@ -43,6 +45,16 @@
             <dependency>
                 <groupId>com.doko.sandbox</groupId>
                 <artifactId>geocoding-api</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.doko.sandbox</groupId>
+                <artifactId>geocoding-rest-api</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.doko.sandbox</groupId>
+                <artifactId>geocoding-rest-google</artifactId>
                 <version>1.0-SNAPSHOT</version>
             </dependency>
         </dependencies>

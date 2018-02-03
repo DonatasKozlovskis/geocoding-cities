@@ -33,7 +33,7 @@
                                 <xsdOption>
                                     <xsd>${basedir}/src/main/resources/google/schemas/geocodingResponse.xsd</xsd>   
                                     <bindingFile>${basedir}/src/main/resources/google/schemas/bindings.xjb</bindingFile>
-                                    <packagename>com.doko.sandbox.google.model</packagename>
+                                    <packagename>com.doko.google.rest.model</packagename>
                                 </xsdOption>
                             </xsdOptions>
                         </configuration>
