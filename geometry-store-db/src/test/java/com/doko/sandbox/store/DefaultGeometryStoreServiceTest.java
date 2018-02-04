@@ -6,7 +6,6 @@ import org.junit.Test;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.mockito.Matchers.anyList;
 import static org.mockito.Mockito.*;
 
 public class DefaultGeometryStoreServiceTest {

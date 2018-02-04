@@ -1,0 +1,72 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <artifactId>geocoding-cities</artifactId>
+        <groupId>com.doko.sandbox</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>geocoding-cities-service</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.doko.sandbox</groupId>
+            <artifactId>input-api</artifactId>
+        </dependency>
+        <!--impl-->
+        <dependency>
+            <groupId>com.doko.sandbox</groupId>
+            <artifactId>input-api-file</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.doko.sandbox</groupId>
+            <artifactId>geocoding-rest-api</artifactId>
+        </dependency>
+        <!--impl-->
+        <dependency>
+            <groupId>com.doko.sandbox</groupId>
+            <artifactId>geocoding-rest-google</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.doko.sandbox</groupId>
+            <artifactId>geometry-store</artifactId>
+        </dependency>
+        <!--impl-->
+        <dependency>
+            <groupId>com.doko.sandbox</groupId>
+            <artifactId>geometry-store-db</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
+        </dependency>
+
+        <!--Test-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

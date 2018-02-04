@@ -13,7 +13,6 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -33,7 +32,7 @@ public class GeocodeRepositoryTest {
     private GeocodeRepository geocodeRepositoryWithException;
 
     @Test
-    public void getGeometry_retriesEmployed_resultObtained() throws Exception {
+    public void getGeometry_retriesEmployed_resultObtained() {
         GeocodeGeometryDto result = geocodeRepositoryWithResult.getGeometry("Test");
 
         verify(geocodeRepositoryWithResult, times(3)).getGeometry(anyString());
@@ -41,7 +40,7 @@ public class GeocodeRepositoryTest {
     }
 
     @Test
-    public void getGeometry_retryThreeTimes_exceptionThrown() throws Exception {
+    public void getGeometry_retryThreeTimes_exceptionThrown() {
         thrown.expect(IllegalStateException.class);
         thrown.expectMessage("Exception 3");
         GeocodeGeometryDto result = geocodeRepositoryWithException.getGeometry("Test");
@@ -52,7 +51,7 @@ public class GeocodeRepositoryTest {
     public static class SpringConfig {
 
         @Bean("geocodeRepositoryWithResult")
-        public GeocodeRepository geocodeRepositoryWithResult() throws Exception {
+        public GeocodeRepository geocodeRepositoryWithResult() {
 
             GeocodeRepository geocodeRepository = mock(GeocodeRepository.class);
             when(geocodeRepository.getGeometry(any()))
@@ -63,7 +62,7 @@ public class GeocodeRepositoryTest {
         }
 
         @Bean("geocodeRepositoryWithException")
-        public GeocodeRepository geocodeRepositoryWithException() throws Exception {
+        public GeocodeRepository geocodeRepositoryWithException() {
 
             GeocodeRepository geocodeRepository = mock(GeocodeRepository.class);
             when(geocodeRepository.getGeometry(any()))

@@ -1,0 +1,50 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: donatas
+      changes:
+        - createTable:
+            tableName: geometry
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: address
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: lat
+                  type: double precision
+                  constraints:
+                    nullable: false
+              - column:
+                  name: lng
+                  type: double precision
+                  constraints:
+                    nullable: false
+              - column:
+                  name: southwestlat
+                  type: double precision
+                  constraints:
+                    nullable: false
+              - column:
+                  name: southwestlng
+                  type: double precision
+                  constraints:
+                    nullable: false
+              - column:
+                  name: northeastlat
+                  type: double precision
+                  constraints:
+                    nullable: false
+              - column:
+                  name: northeastlng
+                  type: double precision
+                  constraints:
+                    nullable: false

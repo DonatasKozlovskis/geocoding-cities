@@ -10,7 +10,7 @@ import org.springframework.web.client.RestTemplate;
 import java.util.Optional;
 
 public class GoogleGeocodeRepository implements GeocodeRepository {
-    private static final Logger LOG = LoggerFactory.getLogger(GoogleGeocodeRepository.class);
+    private static final Logger logger = LoggerFactory.getLogger(GoogleGeocodeRepository.class);
 
     private static final String URL = "https://maps.googleapis.com/maps/api/geocode/xml?key={key}&address={address}";
     private final GoogleProperties googleProperties;
@@ -26,7 +26,7 @@ public class GoogleGeocodeRepository implements GeocodeRepository {
     @Override
     public GeocodeGeometryDto getGeometry(String address) {
 
-        LOG.info("Getting geometry for {}", address);
+        logger.info("Getting geometry for {}", address);
 
         Optional<GeocodeResponse> response = Optional.of(restTemplate
                 .getForObject(URL, GeocodeResponse.class, googleProperties.getApiKey(), address));

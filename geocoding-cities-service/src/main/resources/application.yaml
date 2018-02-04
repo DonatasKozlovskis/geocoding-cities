@@ -1,0 +1,22 @@
+geocoding:
+  refreshStore: true
+  inputSource: 500_europe_cities.csv
+
+google:
+  apiKey: insert_your_key
+
+store:
+  closestLimit: 10
+
+spring:
+  application:
+    name: geocoding-cities
+  datasource:
+    url: "jdbc:postgresql://localhost:5432/postgres"
+    driverClassName: org.postgresql.Driver
+    username: postgres
+    password: 12345
+  profiles:
+    include:
+      - local
+      - h2
